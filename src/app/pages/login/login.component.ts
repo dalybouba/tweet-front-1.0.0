@@ -14,10 +14,6 @@ export class LoginComponent implements OnInit {
   validateForm!: FormGroup;
   loading = false
    submitForm() {
-    // for (const i in this.validateForm.controls) {
-    //   this.validateForm.controls[i].markAsDirty();
-    //   this.validateForm.controls[i].updateValueAndValidity();
-    // }
 
     if (!this.isValid(this.validateForm)) {
       return

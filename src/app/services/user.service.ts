@@ -16,7 +16,6 @@ export class UserService {
   }
 
   user(form: User) {
-    console.log(form)
     return this.httpclient.post<User>(`${this.Url}/users`, form)
   }
 

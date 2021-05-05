@@ -23,11 +23,9 @@ export class BasePageComponent implements OnInit {
 }
 
 addScrollEvent($event: Event): void {
-    // this.appService.scroll$.next($event)
 }
 
 ngOnDestroy(): void {
-    // this.destroy$.next()
 }
 }
 

@@ -18,9 +18,6 @@ export class RegisterComponent implements OnInit {
       this.validateForm.controls[i].updateValueAndValidity();
     }
 
-  //   if (!isValid(this.validateForm)) {
-  //     return
-  // }
 
   this.loading = true
   await this.authService.register(this.validateForm.value).finally(() => this.loading = false)
@@ -40,9 +37,7 @@ export class RegisterComponent implements OnInit {
     this.validateForm = this.fb.group({
       userName: [null, [Validators.required]],
       password: [null, [Validators.required]],
-      // passwordConfirmation: [null, [Validators.required]],
       email: [null, [Validators.required]],
-      // remember: [true]
     });
   }
 

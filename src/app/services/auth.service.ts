@@ -10,8 +10,6 @@ import { User } from '../shared/models/User';
 export class AuthService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
-
-  //user$ = new BehaviorSubject<User[]>([])
   Url = 'http://localhost:3000'
   constructor(private httpClient: HttpClient) { 
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')!));
@@ -23,9 +21,7 @@ export class AuthService {
 }
 
    login(form: any){
-    console.log(form)
     return this.httpClient.post<User>(`${this.Url}/login`, form).pipe(map(user => {
-      // store user details and jwt token in local storage to keep user logged in between page refreshes
       localStorage.setItem('currentUser', JSON.stringify(user));
       this.currentUserSubject.next(user);
       return user;

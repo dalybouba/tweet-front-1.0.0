@@ -52,9 +52,7 @@ export class TweetsComponent implements OnInit, OnDestroy {
         this.nzMessage.warning('Infinite List loaded all');
       });
   }
-  async toggleLike(): Promise<void> {
-    // const tweet = await this.tweetService.toggleLike(this.tweet.id)
-    // Object.assign(this.tweet, tweet)
+   toggleLike() {
   }
   ngOnDestroy(): void {
     this.destroy$.next();
@@ -118,14 +116,12 @@ class MyDataSource extends DataSource<Tweet> {
 
   private fetchPage(page: number): void {
     if (this.fetchedPages.has(page)) {
-      console.log("page", page)
       return;
     }
     this.fetchedPages.add(page);
 
     this.tweetService.getTweetWithParam(this.pageSize, page)
       .subscribe(res => {
-        console.log(res.data)
         this.itemSize = res.total;
         this.cachedData.splice(page * this.pageSize, this.pageSize, ...res.data);
 

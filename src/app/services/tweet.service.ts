@@ -17,7 +17,6 @@ export class TweetService {
   }
 
   get refreshNeeded$(): Observable<any> {
-    console.log(this._refreshNeeded$)
     return this._refreshNeeded$;
   }
 
@@ -26,12 +25,10 @@ export class TweetService {
 
 
   tweet(form: Tweet) {
-    console.log(form)
     return this.httpclient.post<Tweet>(`${this.Url}/tweets`, form)
       .pipe(
         tap(() => {
           this._refreshNeeded$.next();
-          console.log("2", this._refreshNeeded$.next())
         })
       );
 

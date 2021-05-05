@@ -33,11 +33,6 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
 }
-// {
-//     path: '**',
-//     pathMatch: 'full',
-//     redirectTo: '/home',
-// },
 ];
 
 @NgModule({
