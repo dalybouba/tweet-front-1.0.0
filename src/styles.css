@@ -1,0 +1,107 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~ng-zorro-antd/ng-zorro-antd.min.css";
+@import "~ng-zorro-antd/style/index.min.css"; /* Import base styles */
+@import "~ng-zorro-antd/button/style/index.min.css";  /* Import one component's styles */
+
+.ant-col {
+    position: relative;
+    max-width: 100%;
+    min-height: 1px;
+}
+
+.ant-col-xl-16 {
+    display: block;
+    flex: 0 0 80.66666667%;
+    max-width: 66.66666667%;
+    padding-top: 5rem;
+}
+
+html {
+    overflow: hidden !important;
+}
+
+body {
+
+    height: 100vh;
+}
+
+
+
+
+.no-margin {
+    margin: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+a:focus,
+[nz-menu] li:focus,
+button:focus {
+    outline: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.page-header {
+    padding: 12px;
+  
+    background-color: #fff;
+
+ 
+}
+
+app-spin {
+    margin: 16px 0;
+}
+
+
+.content {
+    background-color: #fff;
+}
+
+.tweet-carousel {
+    height: 300px;
+    max-width: 620px;
+    width: 100%;
+    user-select: none;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+
+  
+.full-width {
+    width: 100%;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.flex-no-wrap {
+    flex-wrap: nowrap;
+}
+
+.avatar {
+    vertical-align: middle;
+    color: #888;
+    background-size: cover;
+    background-position: center;
+}
+
+.highlight-tweet {
+    border-radius: 5px;
+    border: 1px solid #f1f1f1
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

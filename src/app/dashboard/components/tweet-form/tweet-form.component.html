@@ -1,0 +1,32 @@
+<form (ngSubmit)="tweet()" [formGroup]="form" nz-form nzLayout="vertical" nzNoColon>
+    <nz-form-item class="margin-t-medium">
+        <nz-form-control>
+            <textarea [placeholder]="placeholder" formControlName="content" nz-input type="text"></textarea>
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-row nzJustify="center">
+        <nz-col [nzSpan]="18">
+            <nz-carousel *ngIf="media.length" class="tweet-carousel full-width" nzEffect="scrollx">
+                <div nz-carousel-content *ngFor="let item of media; let index = index"
+                    [style]="{backgroundImage: 'url('+ item +')'}">
+                    <button nz-button nzType="text" nzShape="round" type="button" (click)="removeMedia(index)">
+                        <i nz-icon nzType="close-circle"></i>
+                    </button>
+                </div>
+            </nz-carousel>
+        </nz-col>
+    </nz-row>
+    <nz-row nzJustify="space-between">
+        <nz-col>
+            <nz-upload nzMultiple>
+                <button nz-button nzShape="circle" nzSize="large" nz-tooltip="Add media" type="button">
+                    <i nz-icon nzType="file-image"></i>
+                </button>
+            </nz-upload>
+        </nz-col>
+        <nz-col>
+            <button nz-button nzType="primary">Tweet</button>
+        </nz-col>
+    </nz-row>
+</form>

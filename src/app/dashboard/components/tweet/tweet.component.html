@@ -1,0 +1,34 @@
+<nz-row [nzGutter]="12" *ngFor="let tweet of tweet">
+    <nz-col>
+        <a>
+            <nz-avatar style="background-color: rgb(175, 180, 206);" [nzText]="tweet.user?.userName" [nzSize]="50"
+                class="avatar"></nz-avatar>
+        </a>
+    </nz-col>
+    <nz-col [nzFlex]="1" style="width: 400px;">
+        <span class="clickable">
+            <nz-row nzJustify="space-between">
+                <nz-col [nzFlex]="1">
+                    <a>
+                        <h3 class="margin-r-small" style="display: inline-block;">{{tweet.user?.userName}}</h3>
+                        <span nz-typography>@{{tweet.user?.userName}}</span>
+                    </a>
+                    -
+                    <span nz-typography>{{tweet.createdAt | date: 'dd MMMM y HH:mm'}}</span>
+                </nz-col>
+            </nz-row>
+            <nz-row>
+                <nz-col>
+                    <p class="margin-t-medium">
+                        {{tweet.content}}
+                    </p>
+                </nz-col>
+            </nz-row>
+        </span>
+        <nz-row nzJustify="space-around" class="buttons">
+            <button nz-button nzType="text" (click)="toggleLike();">
+                <i nz-icon nzType="heart"></i>
+            </button>
+        </nz-row>
+    </nz-col>
+</nz-row>
